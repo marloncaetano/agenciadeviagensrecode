@@ -1,0 +1,58 @@
+Algoritmo "Sistema Agência de Viagens"
+Var
+  opcao: inteiro
+  clientes: vetor [1..100] de string
+  destinos: vetor [1..100] de string
+  i, j: inteiro
+inicio
+  escreval("Bem-vindo à Agência de Viagens!")
+  para i de 1 ate 100 faca
+    clientes[i] := ""
+    destinos[i] := ""
+  fimpara
+  repita
+    escreval("Selecione uma opção:")
+    escreval("1. Cadastro de cliente")
+    escreval("2. Cadastro de destino")
+    escreval("3. Consulta de clientes")
+    escreval("4. Consulta de destinos")
+    escreval("5. Sair")
+    leia(opcao)
+    escolha opcao
+      caso 1
+        para i de 1 ate 100 faca
+          se clientes[i] = "" entao
+            escreval("Insira o nome do cliente:")
+            leia(clientes[i])
+            pare
+          fimse
+        fimpara
+      caso 2
+        para i de 1 ate 100 faca
+          se destinos[i] = "" entao
+            escreval("Insira o destino:")
+            leia(destinos[i])
+            pare
+          fimse
+        fimpara
+      caso 3
+        escreval("Clientes cadastrados:")
+        para i de 1 ate 100 faca
+          se clientes[i] != "" entao
+            escreval(clientes[i])
+          fimse
+        fimpara
+      caso 4
+        escreval("Destinos cadastrados:")
+        para i de 1 ate 100 faca
+          se destinos[i] != "" entao
+            escreval(destinos[i])
+          fimse
+        fimpara
+      caso 5
+        escreval("Saindo do sistema.")
+      caso contrario
+        escreval("Opção inválida.")
+    fimescolha
+  ate opcao = 5
+fimalgoritmo
